@@ -36,6 +36,9 @@ function TableProduct(props) {
         }).then(
             () => {
                 props.loadData();
+                setName('');
+                setId(null);
+                setStatus(false)
             }
         )
         console.log(name)
@@ -170,8 +173,11 @@ function TableProduct(props) {
                 }}
                 onCancel={() => {
                     setIsModalAdd(false);
+                    setName('');
+                    setId(null);
+                    setStatus(false);
                 }}
-                okButtonProps={(value == "") && { disabled: () => { setDisable(true) } }}
+                okButtonProps={(value === "") && { disabled: () => { setDisable(true) } }}
             >
                 <Input.Group style={{ display: 'flex' }}>
                     <label style={{ width: '30%' }}>Name : </label>
@@ -202,9 +208,11 @@ function TableProduct(props) {
                 }}
                 onCancel={() => {
                     setIsModalEdit(false)
+                    setName('');
+                    setId(null);
                 }}
 
-                okButtonProps={(value === "") ? { disabled: () => { setDisable(true) } } : { disabled: { disable } }}
+                okButtonProps={(value === "") && { disabled: () => { setDisable(true) } }}
             >
                 <Input.Group style={{ display: 'flex' }}>
                     <label style={{ width: '30%' }}>Name : </label>
