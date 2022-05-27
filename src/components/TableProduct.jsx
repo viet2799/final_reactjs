@@ -196,7 +196,7 @@ function TableProduct(props) {
                 <Input.Group style={{ display: 'flex', marginTop: '20px' }}>
                     <label style={{ width: '22.6%' }}>Status : </label>
                     <Checkbox
-                        tyle={{ width: '75%' }}
+                        style={{ width: '75%' }}
                         onChange={(e) => setStatus(!status)} />
                 </Input.Group>
             </Modal>
